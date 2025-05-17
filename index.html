@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navigation Bar</title>
+  <style>
+.active a{
+    float: left;
+    color: #050303;
+    text-align: center;
+    padding: 11px 1px;
+    text-decoration:none;
+    font-size: 16px;
+    }
+.active a:hover{
+    background-color: #c2c2c2;
+
+}
+.active li:last-child{
+    margin-right: auto;
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+    main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for products */
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 100px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product h2 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 18px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            margin: 0px -1000px 0px 0px;
+        }
+        .first{
+            text-align: left;
+            margin: 0px 0px 80px 0px;
+        }
+        .second{
+            text-align: left;
+            margin: 0px 0px 80px 0px;
+        }
+        body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f8f8;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e0e0ff;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #303080;
+}
+
+.logo span {
+  font-size: 12px;
+  display: block;
+  color: #666;
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 20px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.nav-icons span {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.category-bar {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.products {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.products h2 {
+  margin-top: 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+.discount-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.category {
+  font-size: 12px;
+  color: #888;
+}
+
+h4 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.stock {
+  font-size: 12px;
+}
+
+.stock.in {
+  color: green;
+}
+
+.stock.out {
+  color: red;
+}
+
+  </style>
+  </head>
+<body>
+  <header class="navbar">
+    <div class="logo"><span>PERIPHERALS</span></div>
+    <input type="text" class="search-bar" placeholder="Search for products ...">
+    <div class="nav-icons">
+      <span>Account</span>
+      <span>Wishlist ❤️</span>
+      <span>Cart 🛒 ₹ 0</span>
+    </div>
+  </header>
+
+  <nav class="category-bar">
+    <button>☰ Browse All Categories</button>
+    <div class="nav-links">
+      <a href="#">Gaming Peripherals</a>
+      <a href="#">Brands</a>
+      <a href="#">Nvidia Studios</a>
+      <a href="#">AMD</a>
+      <a href="#">Intel Zone</a>
+      <a href="#">Laptops</a>
+      <a href="#">PC Builds</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h3>PRODUCT CATEGORIES</h3>
+      <ul>
+        <li><input type="checkbox" checked> Gaming Peripherals</li>
+        <li><input type="checkbox"> Gaming Accessories</li>
+        <li><input type="checkbox"> Gaming Coolers</li>
+        <li><input type="checkbox"> Cabinets</li>
+        <li><input type="checkbox"> Gaming Monitors</li>
+        <li><input type="checkbox"> Power Supply</li>
+      </ul>
+    </aside>
+
+    <section class="products">
+      <h2>Gaming Peripherals</h2>
+      <div class="product-grid">
+        <!-- Product card 1 -->
+        <div class="product-card">
+          <div class="discount-tag">-15%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/1_a4013320-779b-4d16-9b20-595f771fd634.jpg?v=1729791904&width=1445" alt="MSI 120A Case">
+          <h4>ANT ESPORTS ICE 410TG MID-TOWER E-ATX CABINET </h4>
+          <p class="price">₹ 4,990 <span class="old-price">₹ 6,999</span></p>
+          <p class="stock in">✔ In stock</p>
+        </div>
+
+        <!-- Product card 2 -->
+        <div class="product-card">
+          <div class="discount-tag">-26%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/2_cd40add2-0687-4db8-a777-95625694386f.jpg?v=1745830111&width=360" alt="Lian Li Case">
+          <h4>AMD  RYZEN 9000 SERIES...</h4>
+          <p class="price">₹39,799<span class="old-price">₹ 49,999</span></p>
+          <p class="stock in">✔ In stock</p>
+        </div>
+
+              <!-- Product card 3 -->
+        <div class="product-card">
+          <div class="discount-tag">-18%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/ce2.jpg?v=1729770255&width=360" alt="Lian Li Case">
+          <h4>INTEL CORE I3-10105F 10TH GEN 4 CORE UPTO 4.4GHZ LGA1200 PROCESSOR </h4>
+          <p class="price">₹ 27,790<span class="old-price">₹ 39,000</span></p>
+          <p class="stock in">✔ In stock</p>
+        </div>
+              <!-- Product card 4 -->
+        <div class="product-card">
+          <div class="discount-tag">-25%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/2_4d3b3b58-fbf9-4cf2-93eb-1d48f529db06.jpg?v=1729791888&width=360" alt="Lian Li Case">
+          <h4>ASUS ROG RTX 5090 32GB GDDR7...</h4>
+          <p class="price">₹ 27,790 <span class="old-price">₹ 9,999</span></p>
+          <p class="stock in">✔ In stock</p>
+        </div>
+              <!-- Product card 5 -->
+        <div class="product-card">
+          <div class="discount-tag">-30%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/2_a186796e-48c5-4d66-bf8e-6d18c89d67b0.jpg?v=1729756807&width=360" alt="Lian Li Case">
+          <h4>WESTERN DIGITAL 8TB SATA HARD DRIVE...</h4>
+          <p class="price">₹ 18,800<span class="old-price">₹ 49,999</span></p>
+          <p class="stock in">✔ In stock</p>
+        </div>
+          <div class="product-card">
+            <div class="discount-tag">-20%</div>
+            <img src="https://vishalperipherals.com/cdn/shop/files/smart_68762dd7-f726-4264-8829-b83d24c6d3a7.png?v=1729808750&width=360" alt="Lian li Case">
+            <p class="category">Cabinets</p>
+            <p class="price">₹ 5,990 <span class="old-price">₹ 10,000</span></p>
+            <p class="stock in">✔In stock </p>
+        </div>
+         <div class="product-card">
+         <div class="discount-tag">-30%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/1024_f4913336-5545-408e-a69e-d2f674a8c337.png?v=1729796194&width=360" alt="">
+          <p class="category"></p>
+          <h4></h4>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="product-card">
+         <div class="discount-tag">-30%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/2_571ecd60-688d-463e-a9d6-9de61f1d9788.jpg?v=1729749627&width=360" alt="">
+          <p class="category"></p>
+          <h4></h4>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="product-card">
+         <div class="discount-tag">-30%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/4_fc0d00d1-b1c6-44f7-b10e-4f3e39435a2f.jpg?v=1729716052&width=360" alt="">
+          <p class="category"></p>
+          <h4></h4>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="product-card">
+         <div class="discount-tag">-30%</div>
+          <img src="https://vishalperipherals.com/cdn/shop/files/GeForceRTX_4070SUPERGAMINGOC12G-02_17180563-0f84-4a12-8800-b5d9363c515f.png?v=1729795488&width=360" alt="">
+          <p class="category"></p>
+          <h4></h4>
+          <p></p>
+          <p></p>
+        </div>
+        
+  <footer>
+        <div class="first">
+        <h2>company</h2>
+        <p>About us </p>
+        <p>contact us </p>
+        </div>
+        <div class="second">
+            <h2>Quick Links</h2>
+        <p> Privacy Policy</p>
+        <p>Shipping Policy</p>
+        <p>Return & replacement Policy</p>
+        <p>Cancellation Policy</p>
+        <p>Terms & Conditions</p>
+        </div>
+        <p>&copy; 2025 Network Hardware Store</p>
+    </footer>
+
+</body>
+</html>
